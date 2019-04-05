@@ -1,0 +1,37 @@
+{
+  "name": "test-thy-api",
+  "version": "1.0.0",
+  "description": "Experimenting with API test methods",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenEdridge/Test-Thy-API.git"
+  },
+  "author": "Ben Edridge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenEdridge/Test-Thy-API/issues"
+  },
+  "homepage": "https://github.com/BenEdridge/Test-Thy-API#readme",
+  "devDependencies": {
+    "ajv": "^6.10.0",
+    "dredd": "^9.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "fast-check": "^1.13.0",
+    "jest": "^24.7.1",
+    "json-server": "^0.14.2",
+    "jsverify": "^0.8.4",
+    "lolex": "^3.1.0",
+    "newman": "^4.4.1",
+    "nock": "^10.0.6",
+    "sinon": "^7.3.1",
+    "testcheck": "^1.0.0-rc.2"
+  }
+}
