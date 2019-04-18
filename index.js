@@ -1,5 +1,5 @@
 const http = require('http');
-const headers = require('./headers');
+const headers = require('./headers').default;
 
 const server = http.createServer((req, res) => {
 
