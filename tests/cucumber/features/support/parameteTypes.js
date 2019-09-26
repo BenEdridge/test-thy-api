@@ -1,0 +1,1 @@
+const { defineParameterType } = require('cucumber');

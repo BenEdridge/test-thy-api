@@ -1,34 +1,63 @@
-const { Given, When, Then } = require('cucumber')
-const { expect } = require('chai')
+const { Given, When, Then, Before, After, setDefinitionFunctionWrapper } = require('cucumber');
+const { expect } = require('chai');
+const request = require('supertest');
+const cache = require('./cache');
 
-Given('the request URL is {string}', function (string, cb) {
-    this.URL = string;
-    // cb(null, 'resolved');
-    // cb(null, 'pending');
+// setDefinitionFunctionWrapper(function (fn) {
+//   if (isGenerator.fn(fn)) {
+//     return Promise.coroutine(fn);
+//   } else {
+//     return fn;
+//   }
+// });
 
-    const request = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(200);
-        }, 1000);
-    });
+Before(function(scenario, cb) {
+  console.log('Local before:', scenario.sourceLocation.uri);
+  console.log('Deleting tokens, bearers and storage');
+  console.log('TOKEN:', this.TOKEN);
+  this.TOKEN = cache.get('test');
+  cb();
+});
 
-    request.then((result) => {
-        this.RESULT = result;
-        cb(null, result);
-    });
+Given('the request URL is {string}', function (url, cb) {
+  this.TOKEN = cache.get('test');
+  console.log('Req', this.TOKEN);
+  this.TOKEN = 'fadsfasfsdf';
+  this.REQ = request('http://localhost:83')
+  .get(url);
+  cb();
 });
 
 When(/^I send a GET request$/, function (cb) {
-    console.log("Received", this.RESULT);
-    cb(null, 'resolved');
+  this.REQ
+    .set('Accept', 'application/json')
+    .set('Content-Type', 'application/json');
+  cb();
 });
 
 Then(/^I get an OK response$/, function (cb) {
-    expect(this.RESULT).equal(200);
-    cb(null, 'resolved');
+  this.REQ.expect(200).end((err, res) => {
+    if(err){
+      cb(err, 'rejected');
+    } else {
+      cb(null, 'resolved');
+    }
+  });
 });
 
 Then(/^the result is:$/, function (cb) {
-    // cb(null, 'resolved');
-    expect(this.message).equal("");
+  this.REQ.end((err, res) => {
+    if(err){
+      cb(err, 'rejected');
+    } else {
+      cb(res, 'resolved');
+    }
+  })
+});
+
+After(function(scenario, cb) {
+  console.log('Local after:', scenario.sourceLocation.uri);
+  console.log('TOKEN', this.TOKEN);
+  console.log('Cache', cache.get('test'));
+  cb();
 });
