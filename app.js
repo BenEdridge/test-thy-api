@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const swagger = require('./swagger');
 
 const API_KEY = 'b1946ac92492d2347c6235b4d2611184'; // md5 :/
 const PASSWORD = 'password1234';
@@ -27,6 +28,29 @@ app.get('/', (req, res) => res.send({
   status: 'API is ready!',
 }));
 
+/**
+ * @swagger
+ *
+ * /login:
+ *   post:
+ *     description: Login to the application
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: username
+ *         description: Username to use for login.
+ *         in: formData
+ *         required: true
+ *         type: string
+ *       - name: password
+ *         description: User's password.
+ *         in: formData
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: login
+ */
 app.post('/login', (req, res) => {
   console.log('Login request: ', req.body);
 
@@ -61,6 +85,10 @@ app.get('/stock/fruit', (req, res) => {
   })
 });
 
+app.get('/swagger.json', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(swagger);
+});
 
 function updatePrices(stock) {
   const newObj = JSON.parse(JSON.stringify(stock));

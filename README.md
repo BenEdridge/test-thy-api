@@ -1,17 +1,25 @@
 # Test-Thy-API
-An experiment with API testing options including: fuzzing, schema validation, cucumber, generative and swagger integrations
+An experiment with API testing options including: schema validation, generative testing, property-based checks, fuzzing and BDD (cucumber-js)
 
-## Contents
-
-This is basic express endpoint with a few endpoints
-- it doesn't do much!
-- there are edge cases and mistakes in the code that will show up as failed tests (These are commented)
+## Notes
+- A basic API build with express
+- Some tests fail on purpose to show output (Relevant parts of code are commented)
+- Edges cases and mistakes are purposeful
+- Check out all the test styles under `./tests`
 
 ## Get started
 ```
 nvm use
 npm install
-npm start
-npm test
+npm run test:integration
+npm run test:e2e
+# see package.json for more commands to run
 ```
+## Tools
 
+`mocha` - test runner
+`supertest` - request/assertion library
+`dredd` - schema validation against swagger/openapi
+`cucumber-js` - BDD style testing framework
+`fast-check` - Generative/Property based assertions
+`swagger-jsdoc` - JSDoc -> Swagger output

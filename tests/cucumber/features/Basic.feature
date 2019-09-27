@@ -1,11 +1,11 @@
 Feature: Testing Basic Endpoint
 
-    Scenario: Requesting /v1/
-        Given the request URL is "/v1/"
+    Scenario: Requesting /
+        Given the request URL is "/"
         When I send a GET request
         Then I get an OK response
 
-    Scenario: BEN /v1/swagger.json
-        Given the request URL is "/v1/swagger.json"
+    Scenario: BEN /
+        Given the request URL is "/login"
         When I send a GET request
         Then I get an OK response

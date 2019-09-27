@@ -23,7 +23,7 @@ Given('the request URL is {string}', function (url, cb) {
   this.TOKEN = cache.get('test');
   console.log('Req', this.TOKEN);
   this.TOKEN = 'fadsfasfsdf';
-  this.REQ = request('http://localhost:83')
+  this.REQ = request('http://localhost:3000')
   .get(url);
   cb();
 });
