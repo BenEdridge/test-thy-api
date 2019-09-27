@@ -8,18 +8,19 @@ An experiment with API testing options including: schema validation, generative 
 - Check out all the test styles under `./tests`
 
 ## Get started
-```
+```python
 nvm use
 npm install
 npm run test:integration
 npm run test:e2e
+
 # see package.json for more commands to run
 ```
 ## Tools
 
-`mocha` - test runner
-`supertest` - request/assertion library
-`dredd` - schema validation against swagger/openapi
-`cucumber-js` - BDD style testing framework
-`fast-check` - Generative/Property based assertions
-`swagger-jsdoc` - JSDoc -> Swagger output
+`mocha` - test runner  
+`supertest` - request/assertion library  
+`dredd` - schema validation against swagger/openapi  
+`cucumber-js` - BDD style testing framework  
+`fast-check` - Generative/Property based assertions  
+`swagger-jsdoc` - JSDoc -> Swagger output  
