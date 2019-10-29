@@ -3,17 +3,27 @@
   "private": true,
   "version": "0.0.1",
   "description": "Experimenting with API test methods",
+  "author": "Ben Edridge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenEdridge/test-thy-api/issues"
+  },
+  "homepage": "https://github.com/BenEdridge/test-thy-api#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenEdridge/test-thy-api.git"
+  },
   "main": "index.js",
   "engines": {
-    "node": ">= 10.x",
-    "npm": ">= 3.0.0"
+    "node": ">= 12.13.x",
+    "npm": ">= 6.12.x"
   },
   "scripts": {
     "start": "node index.js",
     "test:unit": "mocha ./tests/unit/**",
     "test:integration": "mocha ./tests/integration/**",
-    "test:e2e": "node node_modules/.bin/cucumber-js -f node_modules/cucumber-pretty tests/cucumber/**",
-    "test:schemas": "node tests/schemas/app.spec.js",
+    "test:e2e": "node node_modules/.bin/cucumber-js -f node_modules/cucumber-pretty tests/bdd/**",
+    "test:schemas": "node tests/schema/app.spec.js",
     "test:fuzz": "mocha ./tests/fuzz/**",
     "test:generative": "mocha ./tests/generative/**",
     "check:lint": "eslint --ignore-path .gitignore *.js",
@@ -22,42 +32,33 @@
     "generate:postman": "node openapi.js",
     "generate:postman:cli": "openapi2postmanv2 -s swagger.json -o postman.collection"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BenEdridge/Test-Thy-API.git"
-  },
-  "author": "Ben Edridge",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BenEdridge/Test-Thy-API/issues"
-  },
-  "homepage": "https://github.com/BenEdridge/Test-Thy-API#readme",
   "devDependencies": {
+    "artillery": "^1.6.0-29",
     "chai": "^4.2.0",
-    "cucumber": "^5.1.0",
-    "cucumber-pretty": "^1.5.2",
-    "dredd": "^11.2.15",
+    "cucumber": "^6.0.3",
+    "cucumber-pretty": "^6.0.0",
+    "dredd": "^12.1.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",
-    "fast-check": "^1.16.0",
+    "fast-check": "^1.18.1",
     "jsverify": "^0.8.4",
     "lolex": "^4.1.0",
-    "mocha": "^6.2.0",
-    "nock": "^10.0.6",
+    "mocha": "^6.2.2",
+    "nock": "^11.6.0",
     "sinon": "^7.3.2",
-    "snyk": "^1.199.2",
+    "snyk": "^1.239.4",
     "supertest": "^4.0.2",
-    "swagger-client": "^3.9.0",
-    "swagger-ui": "^3.23.1",
+    "swagger-client": "^3.9.5",
+    "swagger-ui": "^3.24.0",
     "testcheck": "^1.0.0-rc.2"
   },
   "dependencies": {
     "ajv": "^6.10.2",
     "express": "^4.17.1",
     "hooks": "^0.3.2",
-    "newman": "^4.5.4",
-    "openapi-to-postmanv2": "0.0.18",
-    "postman-collection": "^3.5.3",
+    "newman": "^4.5.5",
+    "openapi-to-postmanv2": "^0.1.0",
+    "postman-collection": "^3.5.4",
     "swagger-jsdoc": "^3.4.0"
   }
 }
