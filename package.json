@@ -2,7 +2,7 @@
   "name": "test-thy-api",
   "private": true,
   "version": "0.0.1",
-  "description": "Experimenting with API test methods",
+  "description": "Experimenting with API testing and doco methods",
   "author": "Ben Edridge",
   "license": "ISC",
   "bugs": {
@@ -15,11 +15,12 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">= 12.13.x",
-    "npm": ">= 6.12.x"
+    "node": ">=12.x",
+    "npm": ">=6.12.x"
   },
   "scripts": {
     "start": "node index.js",
+    "test": "echo Running all tests && mocha ./tests/**",
     "test:unit": "mocha ./tests/unit/**",
     "test:integration": "mocha ./tests/integration/**",
     "test:e2e": "node node_modules/.bin/cucumber-js -f node_modules/cucumber-pretty tests/bdd/**",
@@ -59,6 +60,7 @@
     "newman": "^4.5.5",
     "openapi-to-postmanv2": "^0.1.0",
     "postman-collection": "^3.5.4",
+    "redoc": "^2.0.0-rc.18",
     "swagger-jsdoc": "^3.4.0"
   }
 }

@@ -2,21 +2,21 @@ const express = require('express');
 const app = express();
 const swagger = require('./swagger');
 
-const API_KEY = 'b1946ac92492d2347c6235b4d2611184'; // md5 :/
-const PASSWORD = 'password1234';
+const API_KEY = 'API_KEY: b1946ac92492d2347c6235b4d2611184';
+const PASSWORD = 'fa';
 
 const STOCK = {
   items: {
     apple: {
-      price: 2,
+      price: 1,
       stock: 20,
     },
     pear: {
-      price: 3,
+      price: 2,
       stock: 1
     },
     orange: {
-      price: 2.00000000003, // hmm dodgy
+      price: 1.0 + 2.0, // hmm dodgy
       stock: 10,
     }
   }
