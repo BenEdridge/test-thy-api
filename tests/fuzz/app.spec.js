@@ -17,7 +17,7 @@ function bruteForceTest() {
   });
 };
 
-describe('HTTP Endpoints', function () {
+describe('Fuzz Testing Endpoints', function () {
 
   describe('/login', function () {
 
