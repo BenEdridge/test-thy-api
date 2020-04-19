@@ -34,33 +34,33 @@
     "generate:postman:cli": "openapi2postmanv2 -s swagger.json -o postman.collection"
   },
   "devDependencies": {
-    "artillery": "^1.6.0-29",
+    "artillery": "^1.6.0",
     "chai": "^4.2.0",
-    "cucumber": "^6.0.3",
+    "cucumber": "^6.0.5",
     "cucumber-pretty": "^6.0.0",
-    "dredd": "^12.1.0",
+    "dredd": "^13.0.2",
     "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.2",
-    "fast-check": "^1.18.1",
+    "eslint-plugin-import": "^2.20.2",
+    "fast-check": "^1.24.1",
     "jsverify": "^0.8.4",
     "lolex": "^4.1.0",
-    "mocha": "^6.2.2",
-    "nock": "^11.6.0",
+    "mocha": "^6.2.3",
+    "nock": "^11.9.1",
     "sinon": "^7.3.2",
-    "snyk": "^1.239.4",
+    "snyk": "^1.305.1",
     "supertest": "^4.0.2",
-    "swagger-client": "^3.9.5",
-    "swagger-ui": "^3.24.0",
+    "swagger-client": "^3.10.0",
+    "swagger-ui": "^3.25.0",
     "testcheck": "^1.0.0-rc.2"
   },
   "dependencies": {
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.1",
     "express": "^4.17.1",
     "hooks": "^0.3.2",
-    "newman": "^4.5.5",
+    "newman": "^4.6.1",
     "openapi-to-postmanv2": "^0.1.0",
-    "postman-collection": "^3.5.4",
-    "redoc": "^2.0.0-rc.18",
-    "swagger-jsdoc": "^3.4.0"
+    "postman-collection": "^3.6.0",
+    "redoc": "^2.0.0-rc.26",
+    "swagger-jsdoc": "^3.7.0"
   }
 }
