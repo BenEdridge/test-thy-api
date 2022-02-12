@@ -54,7 +54,7 @@
     "testcheck": "^1.0.0-rc.2"
   },
   "dependencies": {
-    "ajv": "^6.12.1",
+    "ajv": "^6.12.3",
     "express": "^4.17.1",
     "hooks": "^0.3.2",
     "newman": "^4.6.1",
