@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "ajv": "^6.12.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "hooks": "^0.3.2",
     "newman": "^4.6.1",
     "openapi-to-postmanv2": "^0.1.0",
